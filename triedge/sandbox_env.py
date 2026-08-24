@@ -30,6 +30,22 @@ def _is_git_repo(repo: Path) -> bool:
         return False
 
 
+def _git_toplevel(repo: Path) -> Optional[Path]:
+    """Return the git worktree root containing `repo`, or None."""
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo), "rev-parse", "--show-toplevel"],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return Path(result.stdout.strip()).resolve()
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return None
+
+
 @dataclass
 class Sandbox:
     """An isolated working copy of the repo for the sandbox agents."""
@@ -97,7 +113,12 @@ def create_sandbox(repo: str | Path) -> Sandbox:
     suffix = time.strftime("%Y%m%d-%H%M%S")
     dest = Path(tempfile.mkdtemp(prefix=f"triedge-sandbox-{suffix}-"))
 
-    if _is_git_repo(source):
+    # Only use a git worktree when `repo` is the git toplevel. If it's a
+    # subdirectory of a larger repo, a worktree would check out the whole repo
+    # and shift all relative paths, so we fall back to a plain copy of just this
+    # directory (keeping file paths relative to `repo`).
+    toplevel = _git_toplevel(source)
+    if _is_git_repo(source) and toplevel == source:
         try:
             result = subprocess.run(
                 ["git", "-C", str(source), "worktree", "add", "--detach", str(dest)],
