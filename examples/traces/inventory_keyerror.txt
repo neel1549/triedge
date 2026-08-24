@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "tests/test_inventory.py", line 12, in test_reserve_unknown_sku_returns_false
+    assert inv.reserve("gadget", 1) is False
+  File "inventory.py", line 19, in reserve
+    if self._stock[sku] >= quantity:
+KeyError: 'gadget'

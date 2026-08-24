@@ -1,0 +1,26 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________________ test_reserve_unknown_sku_returns_false ____________________
+
+    def test_reserve_unknown_sku_returns_false():
+        inv = Inventory({"widget": 5})
+        # Reserving a SKU that isn't stocked should return False, not raise.
+>       assert inv.reserve("gadget", 1) is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inventory.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <inventory.Inventory object at 0x1128bf380>, sku = 'gadget', quantity = 1
+
+    def reserve(self, sku, quantity):
+        # BUG: no membership check; unknown SKUs raise KeyError instead of
+        # returning False. `reserve` should handle missing SKUs gracefully.
+>       if self._stock[sku] >= quantity:
+           ^^^^^^^^^^^^^^^^
+E       KeyError: 'gadget'
+
+inventory.py:18: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_inventory.py::test_reserve_unknown_sku_returns_false - KeyE...
+1 failed in 0.02s

@@ -1,0 +1,91 @@
+{
+  "tests/test_calculator.py::test_add": {
+    "test_id": "tests/test_calculator.py::test_add",
+    "records": [
+      {
+        "timestamp": 1787589508.970455,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970458,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.97046,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.97046,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970461,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.9704618,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.9704618,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970463,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970463,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970464,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970464,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      },
+      {
+        "timestamp": 1787589508.970465,
+        "trace_summary": "error: AssertionError: assert -1 == 5 | frames: calculator.py:10 in add",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": null
+      }
+    ]
+  }
+}

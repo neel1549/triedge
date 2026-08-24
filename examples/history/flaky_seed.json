@@ -1,0 +1,56 @@
+{
+  "tests/test_flaky_network.py::test_fetch_returns_ok": {
+    "test_id": "tests/test_flaky_network.py::test_fetch_returns_ok",
+    "records": [
+      {
+        "timestamp": 1787589508.970712,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": false
+      },
+      {
+        "timestamp": 1787589508.9707131,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "passed",
+        "passed": true
+      },
+      {
+        "timestamp": 1787589508.970714,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": false
+      },
+      {
+        "timestamp": 1787589508.970714,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "passed",
+        "passed": true
+      },
+      {
+        "timestamp": 1787589508.9707148,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "passed",
+        "passed": true
+      },
+      {
+        "timestamp": 1787589508.970716,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": false
+      },
+      {
+        "timestamp": 1787589508.970716,
+        "trace_summary": "error: ConnectionError: temporary failure | frames: flaky_client.py:21 in fetch",
+        "decision": "retry",
+        "outcome": "failed",
+        "passed": false
+      }
+    ]
+  }
+}

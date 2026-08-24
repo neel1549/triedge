@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Triedge runtime artifacts
+.triedge/
+*.sandbox/
+
+# OS / editor
+.DS_Store

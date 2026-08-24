@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "tests/test_calculator.py", line 5, in test_add
+    assert add(2, 3) == 5
+  File "calculator.py", line 10, in add
+    return a - b
+AssertionError: assert -1 == 5
+ +  where -1 = add(2, 3)

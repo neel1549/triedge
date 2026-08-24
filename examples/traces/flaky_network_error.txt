@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "tests/test_flaky_network.py", line 9, in test_fetch_returns_ok
+    result = client.fetch("https://example.com/api")
+  File "flaky_client.py", line 21, in fetch
+    raise ConnectionError(f"temporary failure connecting to {url}")
+flaky_client.ConnectionError: temporary failure connecting to https://example.com/api

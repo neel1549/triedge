@@ -1,0 +1,27 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________________________ test_fetch_returns_ok _____________________________
+
+    def test_fetch_returns_ok():
+        # No fixed seed on purpose: this test is genuinely flaky and will pass on
+        # some runs and fail on others, producing the mixed pass/fail history that
+        # routes to `retry`.
+        client = FlakyClient(failure_rate=0.5)
+>       result = client.fetch("https://example.com/api")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_flaky_network.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <flaky_client.FlakyClient object at 0x10a8bf380>
+url = 'https://example.com/api'
+
+    def fetch(self, url):
+        if self._rng.random() < self._failure_rate:
+>           raise ConnectionError(f"temporary failure connecting to {url}")
+E           flaky_client.ConnectionError: temporary failure connecting to https://example.com/api
+
+flaky_client.py:22: ConnectionError
+=========================== short test summary info ============================
+FAILED tests/test_flaky_network.py::test_fetch_returns_ok - flaky_client.Conn...
+1 failed in 0.01s

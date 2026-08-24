@@ -1,0 +1,13 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________________________________ test_add ___________________________________
+
+    def test_add():
+>       assert add(2, 3) == 5
+E       assert -1 == 5
+E        +  where -1 = add(2, 3)
+
+tests/test_calculator.py:5: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calculator.py::test_add - assert -1 == 5
+1 failed in 0.02s
